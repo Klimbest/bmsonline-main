@@ -1,0 +1,16 @@
+{# src/AppBundle/Resources/views/Admin/layout.html.twig #}
+{% extends "::base.html.twig" %}
+
+{% block title %}- admin -{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/admin.css')}}">
+{% endblock %}
+
+
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/app/js/admin.js') }}"></script>
+{% endblock %}

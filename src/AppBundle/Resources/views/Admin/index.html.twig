@@ -1,0 +1,135 @@
+{# src/AppBundle/Resources/views/Admin/index.html.twig #}
+{% extends 'AppBundle:Admin:layout.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-info">Obiekty:</span>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="{{path('app_admin_add_target')}}">
+                            <button type="button" class="btn btn-default btn-xs"><i class="fa fa-plus"></i> Dodaj obiekt</button>
+                        </a>    
+                    </div>
+                </div>
+                <div class="row">
+                    {% if targets %}
+                        {% for target in targets %}
+                            <div id="{{target.id}}" class="col-md-4 text-center target">
+                                <div class="row">
+                                    <div class="col-xs-6 text-left">
+                                        <span class="label label-primary">
+                                            <strong>
+                                                {{target.id }} - {{ target.name|length > 22 ? target.name|slice(0, 22) ~ '...' : target.name }}
+                                            </strong>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <a href="http://{{target.id}}.bmsonline.pl/">
+                                            <button type="button" class="btn btn-default btn-xs"><i class="fa fa-building-o"></i></button>
+                                        </a>
+                                        <a href="http://{{target.id}}.bmsonline.pl/bms_admin/konfiguracja">
+                                            <button type="button" class="btn btn-default btn-xs"><i class="fa fa-wrench"></i></button>
+                                        </a>
+                                        <a href="http://{{target.id}}.bmsonline.pl/bms_admin/wizualizacja">
+                                            <button type="button" class="btn btn-default btn-xs"><i class="fa fa-paint-brush"></i></button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <a href="http://{{target.id}}.bmsonline.pl/">
+                                            <img src="{{ asset(['/images/targets/', target.id, '.jpg'] | join) }}" class="img-responsive" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <h4>Brak obiektów</h4>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-default label-info">Użytkownicy:</span>
+                </div>
+            </div>
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="{{path('app_admin_invite')}}">
+                            <button type="button" class="btn btn-default btn-xs"><i class="fa fa-envelope"></i> Zaproś użytkownika</button>
+                        </a>       
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Email</th>
+                                    <th class="text-center">Blokada</th>
+                                    <th class="text-center">Dostępy</th>
+                                    <th class="text-center">Ostatnie logowanie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                    <tr>
+                                        <td>{{ user.id }}</td>
+                                        <td class="text-left">
+                                            <a href="{{path('app_admin_edit_role', {'username': user.username})}}">
+                                                <i class="fa fa-key"></i> {{ user.username|e }} 
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {% if user.locked %}
+                                                <a href="{{path('app_admin_enable', {'username': user.username})}}">
+                                                    <i class="fa fa-lock fa-5"></i>
+                                                </a>
+                                            {% else %}
+                                                <a href="{{path('app_admin_disable', {'username': user.username})}}">
+                                                    <i class="fa fa-unlock fa-5"></i>
+                                                </a>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% for role in user.roles %}
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        {{role}}
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% if user.lastLogin %}
+                                                {{ user.lastLogin|date("Y-m-d H:i") }}
+                                            {% else %}
+                                                Brak logowania
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

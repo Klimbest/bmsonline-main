@@ -1,0 +1,17 @@
+{# /app/Resources/FOSUserBundle/views/Profile/edit.html.twig #}
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+
+{% block title %}Edycja danych {{app.user.username}} - {% endblock %}
+{% block nav %}
+    {{parent()}}
+    <ul class="nav navbar-nav navbar-left">
+        <a href="{{app.request.headers.get('referer')}}">
+            <button class="btn btn-default navbar-btn">Powrót <i class="fa fa-arrow-left fa-5"></i></button>
+        </a>
+    </ul>
+{% endblock %}
+
+{% block fos_user_content %}
+    {% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+{% endblock fos_user_content %}

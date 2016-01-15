@@ -1,0 +1,32 @@
+{# src/AppBundle/Resources/views/Homepage/aboutWho.html.twig #}
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block nav %}
+    <a href="{{path('app_homepage')}}">
+        <button type="button" class="btn btn-default navbar-btn"><i class="fa fa-arrow-left"></i> Powrót</button>
+    </a>
+    
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="well">
+                <h3>Dla kogo jest BMSOnline?</h3>
+                <p class="text-justify">Krótko można by powiedzieć, dla każdego, użytkownika końcowego, prezesa firmy, kierownika działu technicznego, serwisanta, dla każdego kto chce monitorować, znać bieżący stan swoich urządzeń, być powiadomiony o nieprawidłowym ich działaniu możliwie najszybciej jak tylko jest możliwe.</p>
+
+                <p class="text-justify">System BMS OnLine potrafi współpracować niemal ze wszystkimi dostępnymi urządzeniami na rynku, które wyposażone są przez producenta tego urządzenia w interfejs komunikacyjny z protokołem MODBUS. W niedalekiej przyszłości planujemy systematycznie rozszerzać bazę protokołów komunikacyjnych, jednak fakt ten będzie oparty na analizie zapotrzebowania naszych klientów. W bieżącym projekcie, skupiliśmy się na najpopularniejszym otwartym protokole komunikacyjnym MODBUS.</p>
+
+                <p class="text-justify">System BMS OnLine ma za zadanie ułatwiać, przez graficzną prezentację bieżącego stanu urządzenia, wyświetlania czytelnych graficznych komunikatów o miejscu wystąpienia awarii, nieprawidłowości. Wiele obecnych stosowanych sterowników w automatyce, jest dla użytkowników „nieczytelne” poruszanie się po wielopoziomowych tekstowych funkcjach menu staje się uciążliwe i bardzo zniechęca do użytkowania, a w szczególności w zakresie analizy zależności poszczególnych informacji, bardzo często staje się niezrozumiałe, a brak równoczesnej oceny kilku wartości nie pozwala na wyciąganie właściwej oceny stanu.</p>
+
+                <p class="text-justify">I tu właśnie, w tym miejscu, system BMS OnLine w prosty i bardzo czytelny sposób pokazuje wszystkie wartości poukładane w sposób graficzny na formatkach urządzenia. Użytkownik bez zastanawiania się w sposób intuicyjny widzi stan urządzenia, poszczególne wartości komponentów, w przypadku wystąpienia awarii praktycznie samodzielnie może dokonać oceny przyczyny jej wystąpienia.</p>
+
+                <p class="text-justify">To co może przekonać niejednego użytkownika, serwisanta, jest najbardziej doceniana funkcjonalność badania trendów poszczególnych elementów.</p>
+
+                <p class="text-justify">W czasach dzisiejszych nikt już nie będzie siedziała kilka dni non stop z kartką papieru, no może nawet i z arkuszem kalkulacyjnym i odpisywał co kilka sekund jakie są wartości poszczególnych elementów systemu, a następnie w sposób ręczny wykreślał wykresy. System BMS OnLine został wyposażony w wielowymiarowy analizator danych, z wykreślaniem wykresów. Ta funkcjonalność pozwala nie tylko dokonać oceny, co było przyczyną wystąpienia awarii, braku utrzymania wartości w procesach regulacyjnych ale także, dokonać oceny pod kątem ekonomicznego użytkowania, ustawiania właściwych nastaw poszczególnych komponentów w celu uzyskania minimalnych strat energii, która byłaby niewykorzystana.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

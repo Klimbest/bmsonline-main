@@ -1,0 +1,36 @@
+# /src/AppBundle/Resources/config/Admin/routing.yml
+#ADMIN       
+app_admin_page:
+    path:       /
+    defaults: { _controller: AppBundle:Admin:index }
+
+app_admin_invite:
+    path:       /invite
+    defaults: { _controller: AppBundle:Admin:invite }
+    requirements:
+        methods:  GET|POST
+
+app_admin_enable:
+    path:       /enable/{username}
+    defaults: { _controller: AppBundle:Admin:enable }
+    
+app_admin_disable:
+    path:       /disable/{username}
+    defaults: { _controller: AppBundle:Admin:disable }
+    
+app_admin_edit_role:
+    path:       /edit/{username}
+    defaults:   { _controller: AppBundle:Admin:editUser }
+    
+app_admin_add_role:
+    path:       /edit/{username}/add_role
+    defaults:   { _controller: AppBundle:Admin:addRole }
+    
+app_admin_remove_role:
+    path:       /edit/{username}/remove_role
+    defaults:   { _controller: AppBundle:Admin:removeRole }
+    
+app_admin_add_target:
+    path:       /add_target
+    defaults:   { _controller: AppBundle:Admin:addTarget }
+

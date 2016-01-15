@@ -1,0 +1,28 @@
+{# src/AppBundle/Resources/views/Homepage/aboutWhy.html.twig #}
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block nav %}
+    <a href="{{path('app_homepage')}}">
+        <button type="button" class="btn btn-default navbar-btn"><i class="fa fa-arrow-left"></i> Powrót</button>
+    </a>
+    
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="well">
+                <h3>Dlaczego właśnie BMSOnLine?</h3>
+                <p class="text-justify">Nic nie zastąpi już automatyzacji procesu, systemu samoczynnego powiadamiania o awariach, stanach zagrożenia, a w dzisiejszych czasach liczy się już tylko czas, czas reakcji od chwili wystąpienia alarmu, zdarzenia, do powiadomienia odpowiednich służby technicznych, osób decydujących, które zareagują w celu usunięcia nieprawidłowości.</p>
+
+                <p class="text-justify">Szybka informacja o nieprawidłowości to jeden z powodów, dzięki któremu możemy minimalizować starty, starty wywołane nieprawidłowym działaniem urządzeń, czy też ich awarią.</p>
+
+                <p class="text-justify">Wykorzystanie systemu BMS OnLine pozwala w sposób nieograniczony mieć dostęp do bieżącej informacji o aktualnym stanie urządzeń. Zastosowana technologia nie ogranicza nas praktycznie w niczym. W dowolnym momencie z dowolnego miejsca na ziemi, o dowolnej porze dnia i nocy możemy nadzorować pracę swoich urządzeń, być powiadomionym, niemal natychmiast zaraz po wystąpieniu alarmu, lub wcześniej zdefiniowanego alertu.</p>
+
+                <p class="text-justify">Jedynym ograniczaniem w użytkowaniu systemu BMS OnLine jest dostęp do sieci INTERNET, jednak widząc dzisiejszy postęp cywilizacyjny to wydaje się nie być żadną barierą.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

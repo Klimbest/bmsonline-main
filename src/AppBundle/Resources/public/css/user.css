@@ -1,0 +1,88 @@
+/*//src/AppBundle/Resources/public/css/user.css*/
+
+
+#user_control_window{
+    border: solid 2px #337AB7;
+    border-radius: 25px;
+    display: none;
+    margin-top: 10px;
+}
+
+.error{
+    border: solid 1px #A22; 
+    border-radius: 25px;
+}
+
+.carousel-inner > .item > img{
+    max-height: 400px;
+    margin: 0 auto;
+}
+.carousel-indicators li{
+    border: 1px solid #337AB7;
+    background-color: #337AB7;
+    top: 90%;
+}  
+.carousel-control .left {
+    background-image: linear-gradient(to right, #0, rgba(51, 122, 183, 0.5));
+}
+
+.glyphicon-chevron-right, .glyphicon-chevron-left{
+    color: #337AB7;
+}
+
+.welcome > .well,
+.contact > .well{
+    min-height: 270px;
+}
+
+.about > .well{
+    min-height: 235px;
+}
+
+.well-bottom{
+    padding-top: 19px;
+    border-left: none;
+    border-right: none;
+}
+.info > .well{
+    min-height: 230px;
+}
+@media screen and (max-width: 1200px){
+    .about > .well{
+        min-height: 290px;
+    }
+}
+@media screen and (max-width: 992px){
+    .about > .well{
+        min-height: auto;
+    }
+}
+
+.slider-well{
+    height: auto;
+    padding: 0px;
+    border: none;
+    box-shadow: none;
+}
+
+#dialog-form{
+    display: none;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover{
+  //  background-color: darkblue;
+  //  color: #FFF;
+}
+
+.tab-pane{
+    margin-top: 20px;
+}
+
+.contact{
+    border-color: #337AB7;
+}
+.fa-info{
+    color: #FFF000;
+}

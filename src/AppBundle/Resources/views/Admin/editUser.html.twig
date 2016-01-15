@@ -1,0 +1,63 @@
+{# src/AppBundle/Resources/views/Admin/editUser.html.twig #}
+{% extends 'AppBundle:Admin:layout.html.twig' %}
+
+{% block nav %}
+    {{ parent() }}
+    <ul class="nav navbar-nav navbar-left">
+        <a href="{{path('app_admin_page')}}">
+            <button type="button" class="btn btn-default navbar-btn" id="bms" ><i class="fa fa-arrow-left"></i> Powrót</button>
+        </a>
+    </ul>
+{% endblock %}
+
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+            <h2 class="text-primary">Uprawnienia dostępu użytkownika <strong>{{ user.username}}</strong></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 text-center">
+            <h4>Uprawnienia nadane:</h4>
+        </div>
+        <div class="col-md-5 col-md-offset-2 text-center">
+            <h4>Dostępne uprawnienia:</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5" id="roleBlock">
+            <form action="{{path('app_admin_remove_role', {'username': user.username})}}" id="removeForm" method="POST">
+                {% for user_target in user_targets %}
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="checkbox" name="targets[]" value="{{user_target.id}}" /> {{ user_target.id }}
+                        </div>
+                        <div class="col-md-9">
+                            {{user_target.name}}
+                        </div>
+                    </div>
+                {% endfor %}
+            </form>
+        </div>
+        <div class="col-md-2 text-center">
+            <i class="fa fa-chevron-circle-left fa-2x controls" id="addButton"></i>
+            <i class="fa fa-chevron-circle-right fa-2x controls" id="removeButton"></i>
+        </div>
+        <div class="col-md-5" id="roleBlock">
+            <form action="{{path('app_admin_add_role', {'username': user.username})}}" id="addForm" method="POST">
+                {% for target in targets %}
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="checkbox" name="targets[]" value="{{target.id}}" /> {{ target.id }}
+                        </div>
+                        <div class="col-md-9">
+                            {{target.name}}
+                        </div>
+                    </div>
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

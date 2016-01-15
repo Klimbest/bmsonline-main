@@ -1,0 +1,12 @@
+{# /app/Resources/FOSUserBundle/views/Registration/checkEmail.html.twig #}
+
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    
+    <div class="col-md-6 col-md-offset-3 text-center" id="user_control_window">
+        <h4>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</h4>
+    </div>
+{% endblock fos_user_content %}

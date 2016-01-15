@@ -1,0 +1,20 @@
+{# src/AppBundle/Resources/views/Homepage/aboutWhy.html.twig #}
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+
+{% block nav %}
+    <a href="{{path('app_homepage')}}">
+        <button type="button" class="btn btn-default navbar-btn"><i class="fa fa-arrow-left"></i> Powrót</button>
+    </a>
+
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div id=private_policy" class="col-lg-12">
+            <embed src="{{ asset('files/private_policy.pdf') }}" /> 
+            
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,165 @@
+{# /app/Resources/FOSUserBundle/views/Profile/show_content.html.twig #}
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<!-- Zakładki -->
+<ul class="nav nav-tabs nav-justified" role="tablist">
+    <li class="active"><a href="#1kartajust" role="tab" data-toggle="tab">Dane podstawowe:</a></li>
+    <li><a href="#2kartajust" role="tab" data-toggle="tab">Dane dodatkowe:</a></li>
+    <li><a href="#3kartajust" role="tab" data-toggle="tab">Bezpieczeństwo:</a></li>
+    <li><a href="#4kartajust" role="tab" data-toggle="tab">Zgody:</a></li>
+    <li><a href="#5kartajust" role="tab" data-toggle="tab">Inne:</a></li>
+</ul>
+
+<!-- Zawartość zakładek -->
+<div class="tab-content">
+    <div class="tab-pane active" id="1kartajust">
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Imię: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4><strong>...</strong></h4>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Nazwisko: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4><strong>...</strong></h4>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>{{ 'profile.show.email'|trans }}: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4><strong>{{ user.email }}</strong></h4>
+            </div>
+        </div>   
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Telefon kontaktowy: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4><strong>...</strong></h4>
+            </div>
+        </div>   
+    </div>
+    <div class="tab-pane" id="2kartajust">
+        <div class="row">
+            <div class="col-xs-3 col-xs-offset-1">
+                <h4>Pełna nazwa zakładu pracy: </h4>
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+                <h4><strong>...</strong></h4>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-xs-3 col-xs-offset-1">
+                <h4>Zajmowane stanowisko: </h4>
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+                <h4><strong>...</strong></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 col-xs-offset-1">
+                <h4>Itd: </h4>
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+                <h4><strong>...</strong></h4>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="3kartajust">
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Hasło: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4><strong>...</strong></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Miernik siły hasła: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4><strong>...</strong></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Rodzaj konta: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4><strong>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            Administator
+                        {% elseif is_granted('ROLE_USER')%}
+                            Użytkownik
+                        {% else %}
+                        {% endif %}
+                </strong></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Ważność konta: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4><strong>od - do</strong></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Blokada: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <input id="lockcheckbox" type="checkbox" name="lock" /> 
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="4kartajust">
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Wyrażenie zgody na wysyłanie informacji marketingowych: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <input type="checkbox" /> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Wyrażenie zgody na Newsletter: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <input type="checkbox" /> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Wyrażenie zgody na wyświetlanie reklam: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <input type="checkbox" /> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1">
+                <h4>Wyrażenie zgody na wysyłanie alarmów, komunikatów technicznych: </h4>
+            </div>
+            <div class="col-xs-2 col-xs-offset-1">
+                <input type="checkbox" /> 
+            </div>
+        </div>
+
+    </div>
+    <div class="tab-pane" id="5kartajust">
+        <div class="row">
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+app_admin:
+    resource: "@AppBundle/Resources/config/Admin/routing.yml"
+    prefix: /admin
+
+app_homepage:
+    resource: "@AppBundle/Resources/config/Homepage/routing.yml"
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+gregwar_captcha_routing:
+    resource: "@GregwarCaptchaBundle/Resources/config/routing/routing.yml"
+    prefix: /_gcb
+    
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

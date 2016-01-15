@@ -1,0 +1,22 @@
+{# src/AppBundle/Resources/views/Homepage/aboutHowMuch.html.twig #}
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+
+{% block nav %}
+    <a href="{{path('app_homepage')}}">
+        <button type="button" class="btn btn-default navbar-btn"><i class="fa fa-arrow-left"></i> Powrót</button>
+    </a>
+    
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="well">
+                <h3>Ile to kosztuje?</h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

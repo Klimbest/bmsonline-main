@@ -1,0 +1,46 @@
+/*//src/AppBundle/Resources/public/css/admin.css*/
+
+.fa-lock, .fa-remove{
+    color: #FF0000;
+}
+.fa-remove{
+    display: none;
+}
+#roleBlock{
+    background-color: #E7E7E7;
+    border-radius: 15px;
+}
+#addButton, #removeButton{
+    display: none;
+    cursor: pointer;
+}
+
+.table{
+    margin-bottom: -2px;
+}
+
+.table, 
+.table-bordered tbody tr td,
+.table-bordered thead tr th{
+    border: 1px solid #337AB7;
+}
+
+.table-bordered thead tr th{
+    border-bottom-width: 2px;
+    border-top: 0px none;
+}
+
+.table tbody tr:hover{
+    font-weight: bold;
+    background-color: #adadad;
+}
+
+.well{
+    padding-top: 19px;
+}
+.target:hover{
+    cursor: pointer;
+}
+.target.selected img{
+    border: 5px solid #639;
+}

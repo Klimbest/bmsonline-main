@@ -1,0 +1,15 @@
+{# /app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig #}
+
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="col-md-6 col-md-offset-3 text-center" id="user_control_window">
+        <h4>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</h4>
+    </div>
+    {% if app.session is not empty %}
+        {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
+        {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>{% endif %}
+    {% endif %}
+{% endblock fos_user_content %}

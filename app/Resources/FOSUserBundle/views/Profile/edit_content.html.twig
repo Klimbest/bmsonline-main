@@ -1,0 +1,17 @@
+{# /app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig #}
+{% trans_default_domain 'FOSUserBundle' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-4 text-center" id="user_control_window">
+        <div>
+            <h3>Edycja danych</h3>
+        </div>
+        <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+            {{ form_widget(form) }}
+            <div class="form-group">
+                <input class="btn btn-default" type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+            </div>
+        </form>
+    </div>
+</div>
+

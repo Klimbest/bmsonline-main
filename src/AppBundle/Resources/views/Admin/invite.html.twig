@@ -1,0 +1,21 @@
+{# src/AppBundle/Resources/views/Admin/invite.html.twig #}
+{% extends 'AppBundle:Admin:layout.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{path('app_admin_invite')}}" method="POST" {{ form_enctype(form) }}>
+                {{ form_errors(form) }}
+                <div class="row">
+                    <div class="col-md-5">
+                        {{ form_row(form.email) }}
+                    </div>
+                    <div class="col-md-2">
+                        <input class="btn btn-default" type="submit" value="Wyślij" />
+                    </div>
+                </div>
+                    {{ form_rest(form) }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

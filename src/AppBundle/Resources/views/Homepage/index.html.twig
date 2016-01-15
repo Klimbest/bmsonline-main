@@ -1,0 +1,182 @@
+{# src/AppBundle/Resources/views/Page/index.html.twig #}
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block nav %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="well slider-well">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    {#<li data-target="#myCarousel" data-slide-to="1"></li>#}
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
+                            </ol>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="{{ asset('/images/reklama1.jpg') }}" class="img-responsive" alt="BMS index">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('/images/reklama3.jpg') }}" class="img-responsive" alt="Widok urządzenia">
+                                </div>
+
+                                <div class="item">
+                                    <img src="{{ asset('/images/reklama4.jpg') }}" class="img-responsive" alt="Typy urządzeń">
+                                </div>
+                            </div>
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 welcome">
+                    <div class="well">
+                        <h3></h3>
+                        <small>
+                            <p>Dziękujemy za zainteresowanie i odwiedzenie naszej strony internetowej <strong>BMS OnLine</strong>.</p>
+                            <p>Naszą główną domeną jest zapewnienie monitorowania online różnego rodzaju urządzeń. Na tę chwilę internetowy system BMS OnLine skupia się głównie w zakresie nadzorowania urządzeń w branży: klimatyzacja, wentylacja, kotłownie, nagrzewnice w skrócie można to określić HVACiR.</p>
+                            <p>W tych dziedzinach zapewniamy niezawodną pomoc naszego zespołu, który składa się z programistów, konstruktorów układów automatyki, konstruktorów urządzeń peryferyjnych, instalatorów, brygad serwisowych, którzy mają bogate doświadczenie i niezbędną wiedzę, dzięki której staramy się pomóc w utrzymaniu bezawaryjnej ciągłości pracy urządzeń, szybkiej diagnostyce w przypadku wystąpienia alarmów oraz zdefiniowanych przez użytkownika systemu stanów określanych jako alert.</p>
+                            <p>Oferujemy kompleksowe usługi w zakresie: projektowania automatyki, wdrożenia, instalacje, kompletacje dostawy, rozruchy, przeglądy.</p>
+                            <p>Każdy z naszych klientów ma swoje własne potrzeby i priorytety, dlatego nasi doradcy każdorazowo podejmują próbę by dobrać właściwe elementy systemu do oczekiwań.</p>
+                        </small>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 contact">
+                    <div class="well text-center">
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4><i class="fa fa-info"></i> Doradca techniczny:</h4>
+                            </div>
+                            <div class="panel-body">
+                                <h5>Zainteresowała Cię nasza oferta? Skontaktuj się z nami.</h5>
+                            </div>
+                        </div>
+
+                        <div id="dialog-form" title="Formularz kontaktowy">
+                            <p class="validateTips"></p>
+                            <form id="contact" action="{{ path("app_homepage_contact")}}" method="post" {{ form_enctype(form) }}>
+                                <fieldset>
+                                    {{ form_errors(form)}}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form_row(form.name)}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">  
+                                            {{ form_row(form.contact)}}
+                                        </div>
+                                    </div>
+                                    {{ form_rest(form)}}
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <button class="btn btn-default navbar-btn" id="create-user">
+                            <i class="fa fa-mouse-pointer fa-flip-horizontal "></i> Formularz kontaktowy
+                        </button>
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 about">
+                    <div class="well">
+                        <h4><span class="label label-default">Dlaczego właśnie BMSOnLine ???</span></h4>
+                        <small>
+                            <p>Nic nie zastąpi już automatyzacji procesu, systemu samoczynnego powiadamiania o awariach, stanach zagrożenia, a w dzisiejszych czasach liczy się już tylko czas, czas reakcji od chwili wystąpienia...</p>
+                        </small>
+                        <p class="text-right">
+                            <strong>
+                                <small>
+                                    <a href="{{ path('app_homepage_about_why')}}"> >>> czytaj dalej <<< </a>
+                                </small>
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 about">
+                    <div class="well">
+                        <h4><span class=" label label-default">Dla kogo jest BMSOnLine ???</span></h4>
+                        <small>
+                            <p>Krótko można by powiedzieć, dla każdego, użytkownika końcowego, prezesa firmy, kierownika działu technicznego, serwisanta, dla każdego kto chce monitorować, znać bieżący stan swoich urządzeń, być powiadomiony o nieprawidłowym ich działaniu możliwie najszybciej jak tylko jest możliwe. System BMS OnLine potrafi współpracować niemal ze wszystkimi dostępnymi urządzeniami na rynku...</p>
+                        </small>
+                        <p class="text-right">
+                            <strong>
+                                <small>
+                                    <a href="{{ path('app_homepage_about_who')}}"> >>> czytaj dalej <<< </a>
+                                </small>
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 about">
+                    <div class="well">
+                        <h4><span class=" label label-default">Ile to kosztuje ???</span></h4>
+                        <small>
+                            <p>Staramy się, by koszt użytkowania systemu był możliwie najniższy i adekwatny do jego funkcjonalności, nasz doświadczenia zdobyte w życiu zawodowym, pozwoliły wyciągnąć wnioski, opracować założenia do systemu i wdrożyć go do realizacji...</p>
+                        </small>
+                        <p class="text-right">
+                            <strong>
+                                <small>
+                                    <a href="{{ path('app_homepage_about_how_much')}}"> >>> czytaj dalej <<< </a>
+                                </small>
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row well well-bottom">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 info">
+                    <div class="well">
+                        <h3></h3>
+                        Firma:
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 info">
+                    <div class="well">
+                        <h3></h3>
+                        Współpraca:
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 info">
+                    <div class="well">
+                        <h3></h3>
+                        Polecamy:
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 info">
+                    <div class="well">
+                        <h3></h3>
+                        {% include "::tagCloud.html.twig" %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

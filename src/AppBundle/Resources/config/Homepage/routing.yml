@@ -1,0 +1,31 @@
+# /src/AppBundle/Resources/config/Homepage/routing.yml
+#HOMEPAGE
+app_homepage:
+    path:       /
+    defaults: { _controller: AppBundle:Homepage:index }
+    
+app_homepage_contact:
+    path:       /contact
+    defaults: { _controller: AppBundle:Homepage:contact }
+    requirements:
+        methods: POST
+        
+app_homepage_about_why:
+    path:       /about1
+    defaults: { _controller: AppBundle:Homepage:aboutWhy }
+    
+app_homepage_about_who:
+    path:       /about2
+    defaults: { _controller: AppBundle:Homepage:aboutWho }
+    
+app_homepage_about_how_much:
+    path:       /about3
+    defaults: { _controller: AppBundle:Homepage:aboutHowMuch }
+    
+app_homepage_private_policy:
+    path:       /private_policy
+    defaults: { _controller: AppBundle:Homepage:privatePolicy }
+    
+app_homepage_menu:
+    path:       /menu
+    defaults: { _controller: AppBundle:Homepage:menu }
