@@ -2,7 +2,7 @@
 /app/cache/*
 !app/cache/.gitkeep
 /app/config/parameters.yml
-/app/config/var/sessions/*
+/app/config/var/sessions/
 /app/logs/*
 !app/logs/.gitkeep
 /app/phpunit.xml
