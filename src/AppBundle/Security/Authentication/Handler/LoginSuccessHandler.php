@@ -65,8 +65,8 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface {
                 $session->set('target_id', $tid);
                 $session->set('target_name', $tname);
                 $session->set('target', $targets[0]);
-                $response = new RedirectResponse("http://tid.bmsonline.dev/app_dev.php/login");
-                echo $tid;
+                //$response = new RedirectResponse("http://tid.bmsonline.dev/app_dev.php/");
+                $response = new RedirectResponse("http://tid.bmsonline.dev/app_dev.php/");
             }
         }
 
